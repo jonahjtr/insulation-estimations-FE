@@ -105,8 +105,7 @@ let NumberOfBandsForNinety;
         <br />
         Each Band is :{isNaN(circumference) ? 0 : circumference + 10} inches
         <br />
-        number Of Bands Needed :{isNan(pipeLength) && isNan(NumberOfBandsForNinety)? 0 : Math.ceil(pipeLength / 12) + NumberOfBandsForNinety}
-        <br />
+        number Of Bands Needed :{{isNaN(pipeLength) || isNaN(NumberOfBandsForNinety) ? 0 : Math.ceil(pipeLength / 12) + NumberOfBandsForNinety}        <br />
       </div>
     </div>
   );
