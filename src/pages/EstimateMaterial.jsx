@@ -101,9 +101,9 @@ let NumberOfBandsForNinety;
       <div className="mx-auto w-fit text-slate-300	 ">
         total Feet Of bands needed:
         <br />
-        { isNaN(totalBandLengthForProject) 0: Math.ceil(totalBandLengthForProject)}
+        { isNaN(totalBandLengthForProject) ? 0: Math.ceil(totalBandLengthForProject)}
         <br />
-        Each Band is :{isNaN(circumference) 0 : circumference + 10} inches
+        Each Band is :{isNaN(circumference) ? 0 : circumference + 10} inches
         <br />
         number Of Bands Needed :{isNan(pipeLength) && isNan(NumberOfBandsForNinety)? 0 : Math.ceil(pipeLength / 12) + NumberOfBandsForNinety}
         <br />
