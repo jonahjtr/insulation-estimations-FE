@@ -87,6 +87,7 @@ const EstimateMaterial = () => {
       cutOutDifficulty
     );
 
+     const NumberOfBandsForNinety = ninety.quantity * ninety.gores
   console.log(totalBandLengthForProject);
 
   return (
@@ -102,7 +103,7 @@ const EstimateMaterial = () => {
         <br />
         Each Band is :{circumference + 10} inches
         <br />
-        number Of Bands Needed :{Math.ceil(pipeLength / 12)}
+        number Of Bands Needed :{Math.ceil(pipeLength / 12) + NumberOfBandsForNinety}
         <br />
       </div>
     </div>
