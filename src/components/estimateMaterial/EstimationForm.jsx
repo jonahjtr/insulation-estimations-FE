@@ -24,7 +24,7 @@ const EstimationForm = ({ shownData, setFormData }) => {
     setLocalFormData({ ...formData, goreQuantity: ""})
     }
   return (
-    <div className="bg-slate-700 pt-10">
+    <div className="bg-slate-700 pt-10 max-w-[60vw]">
       <form className="max-w-md mx-auto" onSubmit={handleSubmit}>
         <div className="grid md:grid-cols-2 md:gap-6">
           <div className="relative z-0 w-full mb-5 group">
