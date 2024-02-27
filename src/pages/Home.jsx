@@ -2,11 +2,13 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div>
+    <div className="w-screen h-screen bg-gray-500	">
       <div className="border ">
         <Link to={"/estimate-material"}>
           {" "}
-          <p>hello 1</p>
+          <p className=" text-white w-[100px] h-[100px] bg-gray-900	">
+            estimating bands
+          </p>
         </Link>
       </div>
       <div>hello 2</div>

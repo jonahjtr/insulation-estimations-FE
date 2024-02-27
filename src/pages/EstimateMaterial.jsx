@@ -20,7 +20,7 @@ const EstimateMaterial = () => {
   useEffect(() => {
     const { pipeLength, circumference, numberOf90s, goreQuantity } = shownData;
     setCircumference(circumference);
-    setPipeLength(pipeLength);
+    setPipeLength(pipeLength * 12);
     setNinety({ quantity: numberOf90s, goreQuantity: goreQuantity });
   }, [shownData]);
 
