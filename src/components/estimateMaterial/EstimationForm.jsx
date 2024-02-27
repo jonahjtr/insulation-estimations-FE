@@ -20,8 +20,8 @@ const EstimationForm = ({ shownData, setFormData }) => {
   };
   const handleClose90Buton =()=>{
     setHasNineties(!hasNineties)
-    formData.numberOf90s = 0
-    formData.goreQuantity = 0
+    formData.numberOf90s = ""
+    formData.goreQuantity = ""
     }
   return (
     <div className="bg-slate-700 pt-10">
