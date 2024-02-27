@@ -86,8 +86,10 @@ const EstimateMaterial = () => {
       ninety.quantity,
       cutOutDifficulty
     );
-
-     const NumberOfBandsForNinety = ninety.quantity * ninety.gores
+let NumberOfBandsForNinety;
+     if(ninety.quantity && ninety.gores) {NumberOfBandsForNinety = ninety.quantity * ninety.gores
+      
+    }else{ NumberOfBandsForNinety = 0}
   console.log(totalBandLengthForProject);
 
   return (
