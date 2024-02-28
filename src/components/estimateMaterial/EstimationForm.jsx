@@ -18,13 +18,9 @@ const EstimationForm = ({ shownData, setFormData }) => {
     e.preventDefault();
     setFormData(formData);
   };
-  const handleClose90Buton =()=>{
-    setHasNineties(!hasNineties)
-    setLocalFormData({ ...formData, numberOf90s: ""})
-    setLocalFormData({ ...formData, goreQuantity: ""})
-    }
+
   return (
-    <div className="bg-slate-700 pt-10 max-w-[60vw]">
+    <div className="bg-slate-700 max-w-[80%] mx-auto pt-10">
       <form className="max-w-md mx-auto" onSubmit={handleSubmit}>
         <div className="grid md:grid-cols-2 md:gap-6">
           <div className="relative z-0 w-full mb-5 group">
@@ -44,7 +40,7 @@ const EstimationForm = ({ shownData, setFormData }) => {
               htmlFor="circumference"
               className="peer-focus:font-medium absolute text-xs text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
-              circumference (inches)
+              circumference
             </label>
           </div>
           <div className="relative z-0 w-full mb-5 group">
@@ -63,7 +59,7 @@ const EstimationForm = ({ shownData, setFormData }) => {
               htmlFor="pipeLength"
               className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
-              Pipe Length (ft)
+              Pipe Length
             </label>
           </div>
           {hasNineties && (
@@ -112,19 +108,20 @@ const EstimationForm = ({ shownData, setFormData }) => {
           )}
         </div>
         <div className="flex justify-center items-center	">
-              {  hasNineties ? <button
-            onClick={ handleClose90Buton}
-            className={` mb-6 text-white bg-red-800 dark:bg-red-800  dark:hover:bg-red-400	hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600  dark:focus:ring-blue-800`}
-          >
-              <p>Click here if you DON'T have 90&apos;s.</p>
-           
-          </button> :
-           <button
+          <button
             onClick={() => setHasNineties(!hasNineties)}
-            className={`bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600  dark:focus:ring-blue-800`}
+            className={`text-white ${
+              hasNineties
+                ? "bg-red-800 dark:bg-red-800  dark:hover:bg-red-400	"
+                : "bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700"
+            } hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600  dark:focus:ring-blue-800`}
           >
+            {hasNineties ? (
+              <p>Click here if you DON'T have 90&apos;s.</p>
+            ) : (
               <p>Click here if you have 90&apos;s.</p>
-          </button>}
+            )}
+          </button>
         </div>
 
         {/* Phone Number and Company Fields */}

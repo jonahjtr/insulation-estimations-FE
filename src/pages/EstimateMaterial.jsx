@@ -86,10 +86,12 @@ const EstimateMaterial = () => {
       ninety.quantity,
       cutOutDifficulty
     );
-let NumberOfBandsForNinety;
-     if(ninety.quantity && ninety.gores) {NumberOfBandsForNinety = ninety.quantity * ninety.gores
-      
-    }else{ NumberOfBandsForNinety = 0}
+  let NumberOfBandsForNinety;
+  if (ninety.quantity && ninety.gores) {
+    NumberOfBandsForNinety = ninety.quantity * ninety.gores;
+  } else {
+    NumberOfBandsForNinety = 0;
+  }
   console.log(totalBandLengthForProject);
 
   return (
@@ -101,11 +103,22 @@ let NumberOfBandsForNinety;
       <div className="mx-auto w-fit text-slate-300	 ">
         total Feet Of bands needed:
         <br />
-        { isNaN(totalBandLengthForProject) ?  <p>0</p> : <p>{Math.ceil(totalBandLengthForProject)}</p>}
+        {isNaN(totalBandLengthForProject) ? (
+          <p>0</p>
+        ) : (
+          <p>{Math.ceil(totalBandLengthForProject)}</p>
+        )}
         <br />
-        Each Band is :{isNaN(circumference) ?  <p>0</p> : <p>{circumference + 10} inches}</p>}
+        Each Band is :
+        {isNaN(circumference) ? <p>0</p> : <p>{circumference + 10}inches</p>}
         <br />
-        number Of Bands Needed :{{isNaN(pipeLength) ? <p>0</p> : <p>{Math.ceil(pipeLength / 12) + NumberOfBandsForNinety} </p>}        <br />
+        number Of Bands Needed :
+        {isNaN(pipeLength) ? (
+          <p>0</p>
+        ) : (
+          <p>{Math.ceil(pipeLength / 12) + NumberOfBandsForNinety} </p>
+        )}{" "}
+        <br />
       </div>
     </div>
   );
