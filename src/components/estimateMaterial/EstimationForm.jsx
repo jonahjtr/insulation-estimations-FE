@@ -18,6 +18,11 @@ const EstimationForm = ({ shownData, setFormData }) => {
     e.preventDefault();
     setFormData(formData);
   };
+  const handleClose90Options = () => {
+    setHasNineties(!hasNineties);
+    setLocalFormData({ ...formData, numberOf90s: "" });
+    setLocalFormData({ ...formData, goreQuantity: "" });
+  };
 
   return (
     <div className="bg-slate-700 max-w-[80%] mx-auto pt-10">
@@ -108,20 +113,21 @@ const EstimationForm = ({ shownData, setFormData }) => {
           )}
         </div>
         <div className="flex justify-center items-center	">
-          <button
-            onClick={() => setHasNineties(!hasNineties)}
-            className={`text-white ${
-              hasNineties
-                ? "bg-red-800 dark:bg-red-800  dark:hover:bg-red-400	"
-                : "bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700"
-            } hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600  dark:focus:ring-blue-800`}
-          >
-            {hasNineties ? (
-              <p>Click here if you DON'T have 90&apos;s.</p>
-            ) : (
-              <p>Click here if you have 90&apos;s.</p>
-            )}
-          </button>
+          {hasNineties ? (
+            <button
+              onClick={() => setHasNineties(!hasNineties)}
+              className="bg-red-800 dark:bg-red-800  dark:hover:bg-red-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600  dark:focus:ring-blue-800"
+            >
+              Click here if you DON'T have 90&apos;s.
+            </button>
+          ) : (
+            <button
+              onClick={handleClose90Options}
+              className="bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600  dark:focus:ring-blue-800"
+            >
+              Click here if you have 90&apos;s.
+            </button>
+          )}
         </div>
 
         {/* Phone Number and Company Fields */}

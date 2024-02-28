@@ -11,7 +11,6 @@ const EstimateMaterial = () => {
   const [shownData, setShownData] = useState({});
   const [lengthOfBanding, setLengthOfBanding] = useState("");
 
-  console.log("setShownData", shownData);
   const getBandsNeeded = (pipeCirc, pipeLength) => {
     let numberOfBands = pipeLength / 12;
     let bandLength = pipeCirc + 10;
@@ -51,32 +50,11 @@ const EstimateMaterial = () => {
 
   const calculateBands = (circumference, pipeLength, cutOutLevel) => {
     const bandLength = circumference + 10;
-    const totalBandsNeeded = pipeLength / 12;
+    let totalBandsNeeded = pipeLength / 12;
     const lengthBeforeWaste = bandLength * totalBandsNeeded;
     const totalBandLength = lengthBeforeWaste * findWasteLevel(cutOutLevel);
     return totalBandLength / 12;
   };
-
-  // const circumference = 135;
-  // const pipeLength = 600;
-  // const ninety = {
-  //   quantity: 3,
-  //   goreQuantity: 16,
-  // };
-  // const cutOutDifficulty = "alot";
-  console.log(
-    "straightPipe",
-    calculateBands(circumference, pipeLength, cutOutDifficulty)
-  );
-  console.log(
-    "bands for 90s",
-    calculateBandsOf90(
-      ninety.goreQuantity,
-      circumference,
-      ninety.quantity,
-      cutOutDifficulty
-    )
-  );
 
   const totalBandLengthForProject =
     calculateBands(circumference, pipeLength, cutOutDifficulty) +
@@ -125,65 +103,3 @@ const EstimateMaterial = () => {
 };
 
 export default EstimateMaterial;
-
-// console.log("Hello, World!");
-
-// const calculateBandsOf90 = (gores, circumference, numberOf90s, cutOutLevel) => {
-//   const bandLength = circumference + 10;
-//   const totalBandLength =
-//     gores * bandLength * numberOf90s * findWasteLevel(cutOutLevel);
-
-//   return totalBandLength / 12;
-// };
-
-// const findWasteLevel = (cutOutLevel) => {
-//   let wasteLevel;
-//   if (cutOutLevel === "normal") {
-//     wasteLevel = 1.1;
-//   } else if (cutOutLevel === "medium") {
-//     wasteLevel = 1.15;
-//   } else {
-//     wasteLevel = 1.2;
-//   }
-//   return wasteLevel;
-// };
-
-// const calculateBands = (circumference, pipeLength, cutOutLevel) => {
-//   const bandLength = circumference + 10;
-//   const totalBandsNeeded = pipeLength / 12;
-//   const lengthBeforeWaste = bandLength * totalBandsNeeded;
-//   const totalBandLength = lengthBeforeWaste * findWasteLevel(cutOutLevel);
-//   return totalBandLength / 12;
-// };
-
-// const circumference = 135;
-// const pipeLength = 1200;
-// const ninety = {
-//   quantity: 2,
-//   goreQuantity: 14,
-// };
-
-// console.log(
-//   "straightPipe",
-//   calculateBands(circumference, pipeLength, "normal")
-// );
-// console.log(
-//   "bands for 90s",
-//   calculateBandsOf90(
-//     ninety.goreQuantity,
-//     circumference,
-//     ninety.quantity,
-//     "normal"
-//   )
-// );
-
-// const totalBandsForProject =
-//   calculateBands(circumference, pipeLength, "normal") +
-//   calculateBandsOf90(
-//     ninety.goreQuantity,
-//     circumference,
-//     ninety.quantity,
-//     "normal"
-//   );
-
-// console.log(totalBandsForProject);
