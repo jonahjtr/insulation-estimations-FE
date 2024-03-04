@@ -27,7 +27,7 @@ const EstimateStraightPipeBands = ({
               required
             />
             <label htmlFor="circumference" className={labelClass}>
-              Circumference
+              Circumference (in)
             </label>
           </div>
           <div className="relative z-0 w-full mb-5 group">
@@ -43,7 +43,7 @@ const EstimateStraightPipeBands = ({
               required
             />
             <label htmlFor="pipeLength" className={labelClass}>
-              Pipe Length
+              Pipe Length (ft)
             </label>
           </div>
         </div>
