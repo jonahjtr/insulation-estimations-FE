@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { calculatePipeBands } from "../../logic/metal/bands";
+// import { calculatePipeBands } from "../../logic/metal/bands";
 
 import EstimationForm from "../components/estimateMaterial/EstimationForm";
 

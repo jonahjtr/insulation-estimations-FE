@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { calculatePipeBands } from "../../../logic/metal/bands";
-import { calculateNinetyBands } from "../../../logic/metal/bands";
+// import { calculatePipeBands } from "../../../logic/metal/bands";
+// import { calculateNinetyBands } from "../../../logic/metal/bands";
 
 const EstimationForm = ({ bandresults, setBandResults }) => {
   const [open90modal, setOpen90Modal] = useState(false);

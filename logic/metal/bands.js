@@ -1,15 +1,15 @@
-function calculatePipeBands(circumference, pipeLength) {
-  const bandLength = circumference + 10;
-  let bandQuantity = Math.ceil(pipeLength / 12) + 1;
+function calculateBands(circumference, pipeLength, ninety) {
+  const bandLength = parseInt(circumference) + 10;
+  let bandQuantity = Math.ceil(parseInt(pipeLength) / 12) + 1;
+
   let totalBandLength = bandLength * bandQuantity;
+  if (ninety.ninetyQuantity && ninety.ninetyQuantity > 0) {
+    const ninetyBanduantity =
+      parseInt(ninety.ninetyQuantity) * parseInt(ninety.goreQuantity) + 1;
+    bandQuantity += ninetyBanduantity;
+    totalBandLength += bandLength * ninetyBanduantity;
+  }
   return { totalBandLength, bandQuantity, bandLength };
 }
 
-function calculateNinetyBands(bandLength, ninetyQuantity, goreQuantity) {
-  if (ninetyQuantity === 0 && goreQuantity === 0) return { totalBandLength: 0 };
-  let bandQuantity = ninetyQuantity * goreQuantity + 1;
-  let totalBandLength = bandLength * bandQuantity;
-  return { totalBandLength, bandQuantity, bandLength };
-}
-
-export { calculatePipeBands, calculateNinetyBands };
+export { calculateBands };
