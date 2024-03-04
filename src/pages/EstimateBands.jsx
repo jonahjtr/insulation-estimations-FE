@@ -90,7 +90,7 @@ const EstimateBands = () => {
         ) : (
           <div className="w-full h-full bg-blue">
             <h1 className="w-fit mx-auto text-2xl text-white font-bold">
-              Submitted!
+              Estimation Calculated!
             </h1>
             <div className=" w-[60%] text-lg   mt-10 mx-auto text-white">
               <p className="">

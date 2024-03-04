@@ -8,7 +8,7 @@ const EstimateStraightPipeBands = ({
   return (
     <div>
       {" "}
-      <h1 className="w-full text-center text-2xl mb-6 text-white font-bold">
+      <h1 className="w-full text-center text-2xl mb-10 text-white font-bold">
         Straight Pipe
       </h1>
       <div className="max-w-md mx-auto">
