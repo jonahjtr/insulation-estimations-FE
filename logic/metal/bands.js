@@ -1,6 +1,6 @@
 function calculateBands(circumference, pipeLength, ninety) {
   const bandLength = parseInt(circumference) + 10;
-  let bandQuantity = Math.ceil(parseInt(pipeLength) / 12) + 1;
+  let bandQuantity = parseInt(pipeLength) + 1;
 
   let totalBandLength = bandLength * bandQuantity;
   if (ninety.ninetyQuantity && ninety.ninetyQuantity > 0) {
@@ -11,5 +11,6 @@ function calculateBands(circumference, pipeLength, ninety) {
   }
   return { totalBandLength, bandQuantity, bandLength };
 }
+
 
 export { calculateBands };
