@@ -68,7 +68,7 @@ const EstimateBands = () => {
   }
   return (
     <div className="bg-slate-700 w-screen h-screen">
-      <div className="bg-slate-600 relative max-w-[80%] lg:max-w-[600px] mx-auto pt-10">
+      <div className="bg-slate-600 relative max-w-[80%] lg:max-w-[600px] mx-auto pt-10 pb-4">
         {submitted == false ? (
           <form onSubmit={onSubmit} className="w-full  h-full">
             <div className="absolute top-0.5 right-0.5">
@@ -92,7 +92,7 @@ const EstimateBands = () => {
             <h1 className="w-fit mx-auto text-2xl text-white font-bold">
               Submitted!
             </h1>
-            <div className=" w-[60%] text-lg  mt-10 mx-auto text-white">
+            <div className=" w-[60%] text-lg   mt-10 mx-auto text-white">
               <p className="">
                 total band length needed:{" "}
                 <span className="text-xl float-right">

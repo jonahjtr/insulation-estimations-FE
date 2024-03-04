@@ -4,10 +4,11 @@ const Estimate90Bands = ({ ninetyQuantity, goreQuantity, updateFields }) => {
   return (
     <div>
       <div className="max-w-md mx-auto">
+        {" "}
+        <h1 className="w-full text-center text-2xl mb-6 text-white font-bold">
+          How many 90's ?
+        </h1>
         <div className="grid md:grid-cols-2 md:gap-6 mx-4">
-          <h1 className="w-fit mx-auto text-2xl text-white font-bold">
-            How many 90's ?
-          </h1>
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="text"
