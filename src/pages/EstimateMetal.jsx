@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { useMultiStepForm } from "../hooks/useMultiStepForm";
-import { calculateBands } from "../../logic/metal/bands";
-import EstimateStraightPipeBands from "../components/EstimationForms/EstimateStraightPipeBands";
-import Estimate90Bands from "../components/EstimationForms/Estimate90Bands";
-
+import { CalculateMetalJacketing } from "../../logic/metal/metalJacketing";
+import EstimateMetalForm from "../components/EstimationForms/metal/EstimateMetalForm";
 const INITIAL_DATA = {
-  pipeLength: "",
   circumference: "",
-  ninetyQuantity: "",
-  goreQuantity: "",
+  pipeLength: "",
+  sheetWidth: "",
 };
-const initialBandResults = {
-  totalBandLength: 0,
-  bandQuantity: 0,
-  bandLength: 0,
+
+const initialMetalResults = {
+  numberOfSheets: 0,
+  lengthOfSheet: 0,
+  totalMetalNeeded: 0,
+  totalLengthAfterWaste: 0,
 };
-const EstimateBands = () => {
+const EstimateMetal = () => {
   const [submitted, setSubmitted] = useState(false);
   const [data, setData] = useState(INITIAL_DATA);
+  const [metalResults, setmetalResults] = useState(initialMetalResults);
+
   function updateFields(fields) {
     setData((prev) => {
       return { ...prev, ...fields };
@@ -33,15 +34,10 @@ const EstimateBands = () => {
     next,
     goToStep,
   } = useMultiStepForm([
-    <EstimateStraightPipeBands {...data} updateFields={updateFields} />,
-    <Estimate90Bands {...data} updateFields={updateFields} />,
+    <EstimateMetalForm {...data} updateFields={updateFields} />,
   ]);
-
-  const [bandResults, setBandResults] = useState(initialBandResults);
-
   function reset() {
     setData(INITIAL_DATA);
-    setBandResults(initialBandResults);
     goToStep(0);
     setSubmitted(false);
   }
@@ -50,18 +46,21 @@ const EstimateBands = () => {
     if (!isLastStep) {
       next();
     } else {
-      const { totalBandLength, bandQuantity, bandLength } = calculateBands(
+      const {
+        numberOfSheets,
+        lengthOfSheet,
+        totalMetalNeeded,
+        totalLengthAfterWaste,
+      } = CalculateMetalJacketing(
         data.circumference,
         data.pipeLength,
-        {
-          ninetyQuantity: data.ninetyQuantity,
-          goreQuantity: data.goreQuantity,
-        }
+        data.sheetWidth
       );
-      setBandResults({
-        totalBandLength: totalBandLength,
-        bandQuantity: bandQuantity,
-        bandLength: bandLength,
+      setmetalResults({
+        numberOfSheets: parseInt(numberOfSheets),
+        lengthOfSheet: parseInt(lengthOfSheet),
+        totalMetalNeeded: parseInt(totalMetalNeeded),
+        totalLengthAfterWaste: parseInt(totalLengthAfterWaste),
       });
       setSubmitted(!submitted);
     }
@@ -94,24 +93,29 @@ const EstimateBands = () => {
             </h1>
             <div className=" w-[60%] text-lg   mt-10 mx-auto text-white">
               <p className="">
-                total band length needed:{" "}
+                Total number of sheets :{" "}
                 <span className="text-xl float-right">
-                  {bandResults.totalBandLength}
+                  {metalResults.numberOfSheets}
                 </span>
               </p>
-              <p className="mt-4">
-                Ammount of bands needed:{" "}
+              <p className="">
+                Each sheet will be :{" "}
                 <span className="text-xl float-right">
-                  {bandResults.bandQuantity}
+                  {metalResults.lengthOfSheet} inches
                 </span>
               </p>
-              <p className="mt-4">
-                Length per band:{" "}
+              <p className="">
+                Total length of metal Needed :{" "}
                 <span className="text-xl float-right">
-                  {bandResults.bandLength}
+                  {metalResults.totalMetalNeeded} ft.
                 </span>
               </p>
-              <p></p>
+              <p className="">
+                Total with waste material:{" "}
+                <span className="text-xl float-right">
+                  {metalResults.totalLengthAfterWaste} ft.
+                </span>
+              </p>
             </div>
             <div className="w-fit mx-auto h-fit mt-8">
               <button
@@ -129,4 +133,4 @@ const EstimateBands = () => {
   );
 };
 
-export default EstimateBands;
+export default EstimateMetal;

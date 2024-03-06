@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { useMultiStepForm } from "../hooks/useMultiStepForm";
-import { calculateBands } from "../../logic/metal/bands";
-import EstimateStraightPipeBands from "../components/EstimationForms/EstimateStraightPipeBands";
-import Estimate90Bands from "../components/EstimationForms/Estimate90Bands";
-
+import EstimateMineralWoolForm from "../components/EstimationForms/insulation/EstimateMineralWoolForm";
+import { calculatePipeWithMineralWool } from "../../logic/insulation/calculateMineralWool";
 const INITIAL_DATA = {
   pipeLength: "",
   circumference: "",
-  ninetyQuantity: "",
-  goreQuantity: "",
+  thickness: "",
 };
-const initialBandResults = {
-  totalBandLength: 0,
-  bandQuantity: 0,
-  bandLength: 0,
+const initialInsulationResults = {
+  totalSquareFeet: 0,
 };
-const EstimateBands = () => {
+const EstimateMineralWool = () => {
   const [submitted, setSubmitted] = useState(false);
   const [data, setData] = useState(INITIAL_DATA);
+  const [insulationResults, setInsulationResults] = useState(
+    initialInsulationResults
+  );
+
   function updateFields(fields) {
     setData((prev) => {
       return { ...prev, ...fields };
@@ -33,15 +32,11 @@ const EstimateBands = () => {
     next,
     goToStep,
   } = useMultiStepForm([
-    <EstimateStraightPipeBands {...data} updateFields={updateFields} />,
-    <Estimate90Bands {...data} updateFields={updateFields} />,
+    <EstimateMineralWoolForm {...data} updateFields={updateFields} />,
   ]);
-
-  const [bandResults, setBandResults] = useState(initialBandResults);
-
   function reset() {
     setData(INITIAL_DATA);
-    setBandResults(initialBandResults);
+    // setBandResults(initialBandResults);
     goToStep(0);
     setSubmitted(false);
   }
@@ -50,19 +45,12 @@ const EstimateBands = () => {
     if (!isLastStep) {
       next();
     } else {
-      const { totalBandLength, bandQuantity, bandLength } = calculateBands(
+      const { totalSquareFeet } = calculatePipeWithMineralWool(
         data.circumference,
         data.pipeLength,
-        {
-          ninetyQuantity: data.ninetyQuantity,
-          goreQuantity: data.goreQuantity,
-        }
+        data.thickness
       );
-      setBandResults({
-        totalBandLength: totalBandLength,
-        bandQuantity: bandQuantity,
-        bandLength: bandLength,
-      });
+      setInsulationResults({ totalSquareFeet: totalSquareFeet });
       setSubmitted(!submitted);
     }
   }
@@ -94,24 +82,11 @@ const EstimateBands = () => {
             </h1>
             <div className=" w-[60%] text-lg   mt-10 mx-auto text-white">
               <p className="">
-                total band length needed:{" "}
+                Total Square Feet of mineral wool :{" "}
                 <span className="text-xl float-right">
-                  {bandResults.totalBandLength}
+                  {insulationResults.totalSquareFeet}
                 </span>
               </p>
-              <p className="mt-4">
-                Ammount of bands needed:{" "}
-                <span className="text-xl float-right">
-                  {bandResults.bandQuantity}
-                </span>
-              </p>
-              <p className="mt-4">
-                Length per band:{" "}
-                <span className="text-xl float-right">
-                  {bandResults.bandLength}
-                </span>
-              </p>
-              <p></p>
             </div>
             <div className="w-fit mx-auto h-fit mt-8">
               <button
@@ -129,4 +104,4 @@ const EstimateBands = () => {
   );
 };
 
-export default EstimateBands;
+export default EstimateMineralWool;

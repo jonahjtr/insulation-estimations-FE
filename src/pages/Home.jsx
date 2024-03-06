@@ -11,7 +11,21 @@ const Home = () => {
           </p>
         </Link>
       </div>
-      <div>hello 3</div>
+      <div className="border ">
+        <Link to={"/estimate-mineral-wool"}>
+          {" "}
+          <p className=" text-white w-[100px] h-[100px] bg-gray-900	">
+            estimate mineral wool
+          </p>
+        </Link>
+      </div>
+      <div className="border ">
+        <Link to={"/estimate-metal"}>
+          <p className=" text-white w-[100px] h-[100px] bg-gray-900	">
+            estimate metal jacketing
+          </p>
+        </Link>
+      </div>
     </div>
   );
 };

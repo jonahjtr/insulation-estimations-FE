@@ -1,13 +1,15 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import EstimateMaterial from "./pages/EstimateMaterial";
 import EstimateBands from "./pages/EstimateBands";
+import EstimateMineralWool from "./pages/EstimateMineralWool";
+import EstimateMetal from "./pages/EstimateMetal";
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/estimate-material" element={<EstimateMaterial />} />
       <Route path="/estimate-bands" element={<EstimateBands />} />
+      <Route path="/estimate-mineral-wool" element={<EstimateMineralWool />} />
+      <Route path="/estimate-metal" element={<EstimateMetal />} />
     </Routes>
   );
 }
