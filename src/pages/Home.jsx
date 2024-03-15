@@ -5,10 +5,10 @@ const Home = () => {
   return (
     <div className="w-screen h-screen bg-gray-500  flex justify-center items-center	">
       <div
-        className=" w-screen h-screen  md:overflow-hidden bg-cover w-full max-w-[3000px] h-full max-h-screen flex justify-center md:items-center	"
+        className=" w-screen  md:overflow-hidden bg-cover w-full max-w-[3000px] h-full max-h-screen flex justify-center md:items-center	"
         style={{ backgroundImage: `url(${heroPic})` }}
       >
-        <div className="overflow-y-auto flex justify-center items-center  backdrop-blur-xl w-[80vw] min-h-[70vh] max-w-[1000px] md:max-h-[1000px]">
+        <div className="h-fit my-auto py-10 overflow-y-auto flex justify-center items-center  backdrop-blur-xl w-[80vw] sm:min-h-[70vh] max-w-[1000px] md:max-h-[1000px]">
           <HeroLinks />
         </div>
       </div>
