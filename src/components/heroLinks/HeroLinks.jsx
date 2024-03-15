@@ -4,7 +4,7 @@ import { heroLinkList } from "../../assets/lists";
 
 const Links = () => {
   return (
-    <div className=" flex flex-col sm:flex-row sm:flex-wrap sm:justify-center sm:w-[90%] h-[80%]">
+    <div className=" flex flex-col md:flex-row md:flex-wrap md:justify-center md:w-[90%] h-[80%]">
       {heroLinkList.map((heroLink, index) => (
         <HeroLink heroLink={heroLink} key={index} />
       ))}

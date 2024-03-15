@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useMultiStepForm } from "../hooks/useMultiStepForm";
 import { CalculateMetalJacketing } from "../../logic/metal/metalJacketing";
 import EstimateMetalForm from "../components/EstimationForms/metal/EstimateMetalForm";
+import NavBar from "../components/Nav/NavBar";
 const INITIAL_DATA = {
   circumference: "",
   pipeLength: "",
@@ -67,6 +68,7 @@ const EstimateMetal = () => {
   }
   return (
     <div className="bg-slate-700 w-screen h-screen">
+      <NavBar />
       <div className="bg-slate-600 relative max-w-[80%] lg:max-w-[600px] mx-auto pt-10 pb-4">
         {submitted == false ? (
           <form onSubmit={onSubmit} className="w-full  h-full">

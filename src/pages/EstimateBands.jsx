@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useMultiStepForm } from "../hooks/useMultiStepForm";
 import { calculateBands } from "../../logic/metal/bands";
-import EstimateStraightPipeBands from "../components/EstimationForms/EstimateStraightPipeBands";
-import Estimate90Bands from "../components/EstimationForms/Estimate90Bands";
+import EstimateStraightPipeBands from "../components/EstimationForms/bands/EstimateStraightPipeBands";
+import Estimate90Bands from "../components/EstimationForms/bands/Estimate90Bands";
+import NavBar from "../components/Nav/NavBar";
 
 const INITIAL_DATA = {
   pipeLength: "",
@@ -68,6 +69,7 @@ const EstimateBands = () => {
   }
   return (
     <div className="bg-slate-700 w-screen h-screen">
+      <NavBar />
       <div className="bg-slate-600 relative max-w-[80%] lg:max-w-[600px] mx-auto pt-10 pb-4">
         {submitted == false ? (
           <form onSubmit={onSubmit} className="w-full  h-full">

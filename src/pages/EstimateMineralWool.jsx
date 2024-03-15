@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useMultiStepForm } from "../hooks/useMultiStepForm";
 import EstimateMineralWoolForm from "../components/EstimationForms/insulation/EstimateMineralWoolForm";
 import { calculatePipeWithMineralWool } from "../../logic/insulation/calculateMineralWool";
+import NavBar from "../components/Nav/NavBar";
 const INITIAL_DATA = {
   pipeLength: "",
   circumference: "",
@@ -56,6 +57,7 @@ const EstimateMineralWool = () => {
   }
   return (
     <div className="bg-slate-700 w-screen h-screen">
+      <NavBar />
       <div className="bg-slate-600 relative max-w-[80%] lg:max-w-[600px] mx-auto pt-10 pb-4">
         {submitted == false ? (
           <form onSubmit={onSubmit} className="w-full  h-full">
