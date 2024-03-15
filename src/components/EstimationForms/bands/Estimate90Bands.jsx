@@ -4,7 +4,7 @@ import { inputClass, labelClass } from "../../reusables/formCss";
 const Estimate90Bands = ({ ninetyQuantity, goreQuantity, updateFields }) => {
   return (
     <div>
-      <div className="max-w-md mx-auto">
+      <div className="max-w-md touch-none mx-auto">
         <div className="w-full text-center text-2xl mb-10 text-white font-bold">
           <h1>How many 90's ?</h1>
           <div className="flex justify-center mx-auto">

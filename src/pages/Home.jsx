@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import heroPic from "../assets/images/HDplant.png";
 import HeroLinks from "../components/heroLinks/HeroLinks";
+import NavBar from "../components/Nav/NavBar";
 const Home = () => {
   return (
-    <div className="w-screen h-screen bg-gray-500  flex justify-center items-center overflow-y-hidden	">
+    <div className="w-[calc(100dvw)] h-[calc(100dvh)] md:h-screen bg-gray-500  overflow-y-hidden	">
+      <NavBar />
       <div
         className=" w-screen  md:overflow-hidden bg-cover w-full max-w-[3000px] h-full max-h-screen flex justify-center md:items-center	"
         style={{ backgroundImage: `url(${heroPic})` }}

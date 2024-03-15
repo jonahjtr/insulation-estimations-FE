@@ -69,6 +69,8 @@ const EstimateMetal = () => {
   return (
     <div className="bg-slate-700 w-screen h-screen">
       <NavBar />
+      <div className="h-[calc(20dvh)] w-full"></div>
+
       <div className="bg-slate-600 relative max-w-[80%] lg:max-w-[600px] mx-auto pt-10 pb-4">
         {submitted == false ? (
           <form onSubmit={onSubmit} className="w-full  h-full">
