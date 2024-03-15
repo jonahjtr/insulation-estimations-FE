@@ -4,5 +4,10 @@ export default {
   theme: {
     extend: {},
   },
+  extend: {
+    backgroundImage: {
+      hero: "url('../assets/images/HDplant.png')",
+    },
+  },
   plugins: [],
 };
