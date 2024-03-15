@@ -10,7 +10,8 @@ const EstimateMetalForm = ({
   return (
     <div>
       <h1 className="w-full text-center text-2xl mb-10 text-white font-bold">
-        Straight Pipe Metal
+        Estimate <br />
+        Metal
       </h1>
       <div className="max-w-md mx-auto">
         {" "}

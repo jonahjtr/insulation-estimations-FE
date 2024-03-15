@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const heroLink = ({ heroLink }) => {
   return (
     <Link to={heroLink.link}>
-      <div className=" pl-3  h-[80px] md:h-[300px] flex md:flex-col md:pt-2 bg-slate-400 bg-opacity-50	 md:w-[200px] m-6">
+      <div className="  text-white h-[80px] md:h-[300px] flex md:flex-col md:pt-2 bg-opacity-80 bg-gray-700	 md:w-[200px] m-6">
         <div className=" h-full w-[80px] md:w-[150px] flex justify-center items-center md:h-[150px] mx-auto">
           <img
             className="w-full   mx-auto"

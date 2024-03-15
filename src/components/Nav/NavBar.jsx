@@ -24,10 +24,6 @@ const NavBar = () => {
     };
   }, [menuRef, openMenu]);
 
-  const isCurrentPath = (path) => {
-    return pathname === path;
-  };
-
   return (
     <nav className="border-gray-200 bg-gray-900">
       <div
@@ -37,8 +33,6 @@ const NavBar = () => {
         <NavLink
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
-          activeClassName="text-blue-500"
-          isCurrentPath={() => location.pathname === "/"}
         >
           <img
             src={logo}
@@ -83,7 +77,7 @@ const NavBar = () => {
               <NavLink
                 to="/"
                 className={` ${
-                  isCurrentPath("/") ? "text-blue-500" : "text-white"
+                  pathname === "/" ? "text-blue-500" : "text-white"
                 } block py-2 px-3 rounded md:border-0 md:p-0 md:hover:text-blue-500 hover:bg-gray-700  md:hover:bg-transparent`}
               >
                 Home
@@ -93,7 +87,7 @@ const NavBar = () => {
               <NavLink
                 to="/estimate-bands"
                 className={` ${
-                  isCurrentPath("/estimate-bands")
+                  pathname === "/estimate-bands"
                     ? "text-blue-500"
                     : "text-white"
                 } block py-2 px-3 rounded md:border-0 md:p-0 md:hover:text-blue-500 hover:bg-gray-700  md:hover:bg-transparent`}
@@ -105,7 +99,7 @@ const NavBar = () => {
               <NavLink
                 to="/estimate-mineral-wool"
                 className={` ${
-                  isCurrentPath("/estimate-mineral-wool")
+                  pathname === "/estimate-mineral-wool"
                     ? "text-blue-500"
                     : "text-white"
                 } block py-2 px-3 rounded md:border-0 md:p-0 md:hover:text-blue-500 hover:bg-gray-700  md:hover:bg-transparent`}
@@ -117,7 +111,7 @@ const NavBar = () => {
               <NavLink
                 to="/estimate-metal"
                 className={` ${
-                  isCurrentPath("/estimate-metal")
+                  pathname === "/estimate-metal"
                     ? "text-blue-500"
                     : "text-white"
                 } block py-2 px-3 rounded md:border-0 md:p-0 md:hover:text-blue-500 hover:bg-gray-700  md:hover:bg-transparent`}
