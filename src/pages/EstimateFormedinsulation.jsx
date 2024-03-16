@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useMultiStepForm } from "../hooks/useMultiStepForm";
-import EstimateMineralWoolForm from "../components/EstimationForms/insulation/EstimateMineralWoolForm";
-import { calculatePipeWithMineralWool } from "../../logic/insulation/calculateMineralWool";
+import EstimateFormedPipeForm from "../components/EstimationForms/insulation/EstimateFormedPipeForm";
+import { calculateFormedInsulation } from "../../logic/insulation/calculateFormedInsulation";
 import NavBar from "../components/Nav/NavBar";
 const INITIAL_DATA = {
   pipeLength: "",
-  circumference: "",
-  thickness: "",
+  stickLength: "",
 };
 const initialInsulationResults = {
-  totalSquareFeet: 0,
+  peices: 0,
+  linearFeet: 0,
 };
-const EstimateMineralWool = () => {
+const EstimateFormedinsulation = () => {
   const [submitted, setSubmitted] = useState(false);
   const [data, setData] = useState(INITIAL_DATA);
   const [insulationResults, setInsulationResults] = useState(
@@ -33,11 +33,10 @@ const EstimateMineralWool = () => {
     next,
     goToStep,
   } = useMultiStepForm([
-    <EstimateMineralWoolForm {...data} updateFields={updateFields} />,
+    <EstimateFormedPipeForm {...data} updateFields={updateFields} />,
   ]);
   function reset() {
     setData(INITIAL_DATA);
-    // setBandResults(initialBandResults);
     goToStep(0);
     setSubmitted(false);
   }
@@ -46,20 +45,16 @@ const EstimateMineralWool = () => {
     if (!isLastStep) {
       next();
     } else {
-      if (
-        isNaN(data.pipeLength) ||
-        isNan(data.circumference) ||
-        isNan(data.thickness)
-      ) {
-        alert("Please make sure you use Numbers");
+      if (isNaN(data.pipeLength) || isNaN(data.stickLength)) {
+        alert("Please use numbers only");
         reset();
       }
-      const { totalSquareFeet } = calculatePipeWithMineralWool(
-        data.circumference,
+      const { peices, linearFeet } = calculateFormedInsulation(
         data.pipeLength,
-        data.thickness
+        data.stickLength
       );
-      setInsulationResults({ totalSquareFeet: totalSquareFeet });
+
+      setInsulationResults({ peices: peices, linearFeet: linearFeet });
       setSubmitted(!submitted);
     }
   }
@@ -93,9 +88,15 @@ const EstimateMineralWool = () => {
             </h1>
             <div className=" w-[60%] text-lg   mt-10 mx-auto text-white">
               <p className="">
-                Total Square Feet of mineral wool :{" "}
+                Total Peices :{" "}
                 <span className="text-xl float-right">
-                  {insulationResults.totalSquareFeet}
+                  {insulationResults.peices}
+                </span>
+              </p>
+              <p className="">
+                Total linear feet :
+                <span className="text-xl float-right">
+                  {insulationResults.linearFeet}
                 </span>
               </p>
             </div>
@@ -115,4 +116,4 @@ const EstimateMineralWool = () => {
   );
 };
 
-export default EstimateMineralWool;
+export default EstimateFormedinsulation;

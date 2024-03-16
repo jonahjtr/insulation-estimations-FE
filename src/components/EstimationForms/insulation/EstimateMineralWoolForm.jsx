@@ -8,9 +8,9 @@ const EstimateMineralWoolForm = ({
   updateFields,
 }) => {
   return (
-    <div>
+    <div className="text-white">
       <h1 className="w-full text-center  text-2xl mb-10 text-white font-bold">
-        Estimate <br /> Mineral Wool
+        Estimate <br /> Sheet Insulation
       </h1>
       <div className="max-w-md mx-auto">
         {" "}

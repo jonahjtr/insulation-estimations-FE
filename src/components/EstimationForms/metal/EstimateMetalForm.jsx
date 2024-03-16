@@ -8,7 +8,7 @@ const EstimateMetalForm = ({
   updateFields,
 }) => {
   return (
-    <div>
+    <div className="text-white">
       <h1 className="w-full text-center text-2xl mb-10 text-white font-bold">
         Estimate <br />
         Metal

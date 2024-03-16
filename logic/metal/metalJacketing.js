@@ -12,9 +12,7 @@ export function CalculateMetalJacketing(circumference, pipeLength, sheetWidth) {
   );
   let lengthOfSheet = parseInt(circumference) + 3;
   const totalMetalNeeded = Math.ceil((numberOfSheets * lengthOfSheet) / 12);
-  console.log("numberOfSheets : ", numberOfSheets);
-  console.log("totalMetalNeeded : ", totalMetalNeeded);
-  console.log("lengthOfSheet : ", lengthOfSheet);
+
   const totalLengthAfterWaste = Math.ceil(totalMetalNeeded * 1.1);
 
   return {

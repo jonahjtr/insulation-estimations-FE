@@ -97,9 +97,9 @@ const NavBar = () => {
             </li>
             <li>
               <NavLink
-                to="/estimate-mineral-wool"
+                to="/insulation-landing"
                 className={` ${
-                  pathname === "/estimate-mineral-wool"
+                  pathname === "/insulation-landing"
                     ? "text-blue-500"
                     : "text-white"
                 } block py-2 px-3 rounded md:border-0 md:p-0 md:hover:text-blue-500 hover:bg-gray-700  md:hover:bg-transparent`}

@@ -1,13 +1,19 @@
 import React from "react";
 import HeroLink from "./HeroLink";
-import { heroLinkList } from "../../assets/lists";
 
-const Links = () => {
+const Links = ({ heroLinkList, title }) => {
   return (
-    <div className=" flex flex-col md:flex-row md:flex-wrap md:justify-center md:w-[90%] h-[80%]">
-      {heroLinkList.map((heroLink, index) => (
-        <HeroLink heroLink={heroLink} key={index} />
-      ))}
+    <div className=" flex flex-col md:w-[90%] h-[80%]">
+      {title && (
+        <div className="mx-auto w-full text-center  text-5xl mb-10 text-white font-bold">
+          {title}
+        </div>
+      )}
+      <div className="flex flex-col md:flex-row md:flex-wrap md:justify-center">
+        {heroLinkList.map((heroLink, index) => (
+          <HeroLink heroLink={heroLink} key={index} />
+        ))}
+      </div>
     </div>
   );
 };
