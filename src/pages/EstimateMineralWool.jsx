@@ -48,8 +48,8 @@ const EstimateMineralWool = () => {
     } else {
       if (
         isNaN(data.pipeLength) ||
-        isNan(data.circumference) ||
-        isNan(data.thickness)
+        isNaN(data.circumference) ||
+        isNaN(data.thickness)
       ) {
         alert("Please make sure you use Numbers");
         reset();
