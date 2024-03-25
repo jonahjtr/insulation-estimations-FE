@@ -12,8 +12,7 @@ const INITIAL_DATA = {
 const initialMetalResults = {
   numberOfSheets: 0,
   lengthOfSheet: 0,
-  totalMetalNeeded: 0,
-  totalLengthAfterWaste: 0,
+  totalSquareFeet: 0,
 };
 const EstimateMetal = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -47,21 +46,16 @@ const EstimateMetal = () => {
     if (!isLastStep) {
       next();
     } else {
-      const {
-        numberOfSheets,
-        lengthOfSheet,
-        totalMetalNeeded,
-        totalLengthAfterWaste,
-      } = CalculateMetalJacketing(
-        data.circumference,
-        data.pipeLength,
-        data.sheetWidth
-      );
+      const { numberOfSheets, lengthOfSheet, totalSquareFeet } =
+        CalculateMetalJacketing(
+          data.circumference,
+          data.pipeLength,
+          data.sheetWidth
+        );
       setmetalResults({
         numberOfSheets: parseInt(numberOfSheets),
         lengthOfSheet: parseInt(lengthOfSheet),
-        totalMetalNeeded: parseInt(totalMetalNeeded),
-        totalLengthAfterWaste: parseInt(totalLengthAfterWaste),
+        totalSquareFeet: parseInt(totalSquareFeet),
       });
       setSubmitted(!submitted);
     }
@@ -71,7 +65,7 @@ const EstimateMetal = () => {
       <NavBar />
       <div className="h-[calc(20dvh)] w-full"></div>
 
-      <div className="bg-slate-600 relative max-w-[80%] lg:max-w-[600px] mx-auto pt-10 pb-4">
+      <div className="bg-slate-600 relative max-w-[80%] lg:max-w-[800px] mx-auto pt-10 pb-4">
         {submitted == false ? (
           <form onSubmit={onSubmit} className="w-full  h-full">
             <div className="absolute top-0.5 right-0.5">
@@ -92,32 +86,26 @@ const EstimateMetal = () => {
           </form>
         ) : (
           <div className="w-full h-full bg-blue">
-            <h1 className="w-fit mx-auto text-2xl text-white font-bold">
+            <h1 className="w-fit mx-auto text-2xl  md:text-4xl text-white font-bold">
               Estimation Calculated!
             </h1>
-            <div className=" w-[60%] text-lg   mt-10 mx-auto text-white">
-              <p className="">
+            <div className=" w-[90%] text-lg   mt-10 mx-auto text-white">
+              <p className="text-md md:text-4xl">
                 Total number of sheets :{" "}
-                <span className="text-xl float-right">
+                <span className="text-xl md:text-4xl float-right">
                   {metalResults.numberOfSheets}
                 </span>
               </p>
-              <p className="">
+              <p className="text-md md:text-4xl">
                 Each sheet will be :{" "}
-                <span className="text-xl float-right">
-                  {metalResults.lengthOfSheet} inches
+                <span className="text-xl md:text-4xl float-right">
+                  {metalResults.lengthOfSheet} in.
                 </span>
               </p>
-              <p className="">
-                Total length of metal Needed :{" "}
-                <span className="text-xl float-right">
-                  {metalResults.totalMetalNeeded} ft.
-                </span>
-              </p>
-              <p className="">
-                Total with waste material:{" "}
-                <span className="text-xl float-right">
-                  {metalResults.totalLengthAfterWaste} ft.
+              <p className="text-md md:text-4xl">
+                Total SqFt of metal Needed :
+                <span className="text-xl md:text-4xl float-right">
+                  {metalResults.totalSquareFeet} SqFt.
                 </span>
               </p>
             </div>

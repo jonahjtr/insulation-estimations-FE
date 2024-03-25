@@ -6,11 +6,10 @@ export default {
     "./node_modules/flowbite/**/*.js",
   ],
   theme: {
-    extend: {},
-  },
-  extend: {
-    backgroundImage: {
-      hero: "url('../assets/images/HDplant.png')",
+    extend: {
+      backgroundImage: {
+        hero: "url('../assets/images/HDplant.png')",
+      },
     },
   },
   plugins: [require("flowbite/plugin")],

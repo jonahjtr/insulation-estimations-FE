@@ -37,10 +37,10 @@ const NavBar = () => {
           <img
             src={logo}
             alt="Logo"
-            className="h-8"
+            className="h-8 "
             style={{ stroke: "#ffffff" }}
           />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
+          <span className="self-center text-md sm:text-2xl font-semibold whitespace-nowrap text-white">
             Insulation Calculator
           </span>
         </NavLink>
@@ -85,11 +85,9 @@ const NavBar = () => {
             </li>
             <li>
               <NavLink
-                to="/estimate-bands"
+                to="/estimate-all"
                 className={` ${
-                  pathname === "/estimate-bands"
-                    ? "text-blue-500"
-                    : "text-white"
+                  pathname === "/estimate-all" ? "text-blue-500" : "text-white"
                 } block py-2 px-3 rounded md:border-0 md:p-0 md:hover:text-blue-500 hover:bg-gray-700  md:hover:bg-transparent`}
               >
                 Bands
@@ -117,6 +115,16 @@ const NavBar = () => {
                 } block py-2 px-3 rounded md:border-0 md:p-0 md:hover:text-blue-500 hover:bg-gray-700  md:hover:bg-transparent`}
               >
                 Metal
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/estimate-all"
+                className={` ${
+                  pathname === "/estimate-all" ? "text-blue-500" : "text-white"
+                } block py-2 px-3 rounded md:border-0 md:p-0 md:hover:text-blue-500 hover:bg-gray-700  md:hover:bg-transparent`}
+              >
+                Estimate All
               </NavLink>
             </li>
           </ul>
