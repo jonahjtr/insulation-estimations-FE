@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const FormWithSteps = ({
   onSubmit,
@@ -21,11 +21,13 @@ const FormWithSteps = ({
       onSubmit(e);
     }
   };
+
+  useEffect(() => {}, [steps]);
   return (
     <div>
       {!submitted ? (
         <form onSubmit={shouldSubmit} className="w-full  h-full">
-          <div className="absolute top-0.5 right-0.5">
+          <div className="absolute text-white pr-2 top-0.5 right-0.5">
             {currentStep + 1} / {steps.length}
           </div>
           {step}

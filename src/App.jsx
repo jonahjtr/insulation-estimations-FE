@@ -5,7 +5,7 @@ import EstimateMineralWool from "./pages/EstimateMineralWool";
 import EstimateMetal from "./pages/EstimateMetal";
 import InsulationLanding from "./pages/InsulationLanding";
 import EstimateFormedinsulation from "./pages/EstimateFormedinsulation";
-import EstimateAll from "./pages/EstimateAll";
+import EstimateSheetInsulation from "./pages/EstimateSheetInsulation";
 
 function App() {
   return (
@@ -19,7 +19,10 @@ function App() {
         path="/estimate-formed-insulation"
         element={<EstimateFormedinsulation />}
       />
-      <Route path="/estimate-all" element={<EstimateAll />} />
+      <Route
+        path="/estimate-sheet-insulation"
+        element={<EstimateSheetInsulation />}
+      />
     </Routes>
   );
 }

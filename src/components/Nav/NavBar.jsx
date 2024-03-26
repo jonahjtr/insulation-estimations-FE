@@ -85,9 +85,11 @@ const NavBar = () => {
             </li>
             <li>
               <NavLink
-                to="/estimate-all"
+                to="/estimate-bands"
                 className={` ${
-                  pathname === "/estimate-all" ? "text-blue-500" : "text-white"
+                  pathname === "/estimate-bands"
+                    ? "text-blue-500"
+                    : "text-white"
                 } block py-2 px-3 rounded md:border-0 md:p-0 md:hover:text-blue-500 hover:bg-gray-700  md:hover:bg-transparent`}
               >
                 Bands
@@ -119,12 +121,14 @@ const NavBar = () => {
             </li>
             <li>
               <NavLink
-                to="/estimate-all"
+                to="/estimate-sheet-insulation"
                 className={` ${
-                  pathname === "/estimate-all" ? "text-blue-500" : "text-white"
+                  pathname === "/estimate-sheet-insulation"
+                    ? "text-blue-500"
+                    : "text-white"
                 } block py-2 px-3 rounded md:border-0 md:p-0 md:hover:text-blue-500 hover:bg-gray-700  md:hover:bg-transparent`}
               >
-                Estimate All
+                Estimate sheet insulation
               </NavLink>
             </li>
           </ul>
