@@ -5,7 +5,7 @@ import FormWithSteps from "../components/multistepForm/FormWithSteps";
 import ChooseCover from "../components/EstimationForms/EstimateAll/ChooseCover";
 import MeasurementsForm from "../components/EstimationForms/EstimateAll/SheetMeasurementsForm";
 const INITIAL_DATA = {
-  nineties: "",
+  nineties: false,
   insulation: {
     type: "",
     thickness: "",

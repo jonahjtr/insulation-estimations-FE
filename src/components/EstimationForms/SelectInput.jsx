@@ -18,7 +18,12 @@ const SelectInput = ({
         id={fieldName}
         value={value}
         onChange={(e) =>
-          updateFields({ [fieldName]: e.target.value }, nestedName)
+          updateFields(
+            {
+              [fieldName]: e.target.value,
+            },
+            nestedName
+          )
         }
         className={selectClass}
         required
@@ -40,8 +45,8 @@ const SelectInput = ({
 };
 
 export const selectClass =
-  "block py-2.5 px-0 w-full text-[1rem] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-500 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer";
+  "block  pt-2.5 px-0 w-full text-[1rem] lg:text-[1.3rem]  lg:h-[3.8rem] text-white bg-transparent border-0 border-b-2 border-gray-300  focus:outline-none focus:ring-0 focus:border-blue-600 peer";
 export const labelClass =
-  "absolute  text-gray-400 text-[1rem]  dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]";
+  "absolute  text-gray-400 text-[1rem] lg:text-[1.5rem]  dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 lg:top1 -z-10 origin-[0]";
 
 export default SelectInput;

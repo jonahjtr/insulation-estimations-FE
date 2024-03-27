@@ -11,11 +11,11 @@ const RadioInput = ({
   return (
     <div className="mb-5">
       <fieldset className="flex items-center">
-        <legend className="text-[1rem] mb-2 lg:text-[1rem]  text-gray-400 dark:text-gray-400">
+        <legend className="text-[1rem] mb-2 lg:text-[1.5rem]  text-gray-400 dark:text-gray-400">
           {label}
         </legend>
         {options.map((option, index) => (
-          <label key={option.value} className="inline-flex  items-center mr-4">
+          <label key={option.value} className="inline-flex  items-center mr-10">
             <input
               type="radio"
               name={fieldName}
@@ -28,7 +28,7 @@ const RadioInput = ({
               className="peer sr-only"
             />
             <span className="block peer-checked:bg-blue-600  peer-checked:border-transparent peer-checked:ring-0 h-4 w-4 border border-gray-300 rounded-full dark:border-gray-500 dark:checked:bg-blue-500 dark:checked:border-transparent dark:checked:ring-0"></span>
-            <span className="ml-2 text-sm lg:text-[1rem]  text-gray-400 dark:text-gray-400">
+            <span className="ml-2 text-md lg:text-[1.5rem]   text-gray-400 ">
               {option.label}
             </span>
           </label>

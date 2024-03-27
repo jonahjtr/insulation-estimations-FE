@@ -16,7 +16,11 @@ const SheetMeasurementsForm = ({
         nestedName="insulation"
         fieldName="width"
         updateFields={updateNestedObject}
-        label="What is the width of the insulation?(inches)"
+        label={
+          <span>
+            insulation width <em>(inches)</em>
+          </span>
+        }
         value={insulation.width}
       />
       <FormInputs
@@ -24,7 +28,11 @@ const SheetMeasurementsForm = ({
         nestedName="insulation"
         fieldName="thickness"
         updateFields={updateNestedObject}
-        label="What is the insulation thickness?(inches)"
+        label={
+          <span>
+            insulation thickness <em>(inches)</em>
+          </span>
+        }
         value={insulation.thickness}
       />
       <FormInputs
@@ -32,7 +40,11 @@ const SheetMeasurementsForm = ({
         nestedName="equipmentToInsulate"
         fieldName="circumference"
         updateFields={updateNestedObject}
-        label="What is the circumference of the pipe?(inches)"
+        label={
+          <span>
+            Pipe circumference <em>(inches)</em>
+          </span>
+        }
         value={equipmentToInsulate.circumference}
       />
       <FormInputs
@@ -40,7 +52,11 @@ const SheetMeasurementsForm = ({
         nestedName="equipmentToInsulate"
         fieldName="length"
         updateFields={updateNestedObject}
-        label="What is the length of the pipe?(feet)"
+        label={
+          <span>
+            Pipe length <em>(inches)</em>
+          </span>
+        }
         value={equipmentToInsulate.length}
       />
       {nineties == "true" && (

@@ -11,7 +11,7 @@ const ChooseCover = ({
   updateFields,
 }) => {
   const difficultyOptions = [
-    { label: "Select a difficulty.", value: "" },
+    { label: "", value: "" },
     { label: "Almost no cutouts", value: "1" },
     { label: "Few Cutouts", value: "2" },
     { label: "More Cutouts, may mess up a bit ", value: "3" },
@@ -29,6 +29,7 @@ const ChooseCover = ({
     >
       <div className="">
         <SelectInput
+          type="number"
           nestedName="equipmentToInsulate"
           fieldName="difficulty"
           updateFields={updateNestedObject}
