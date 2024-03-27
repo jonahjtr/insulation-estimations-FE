@@ -7,6 +7,12 @@ import tempWrap from "./images/heroLinks/tempWrap.jpg";
 
 const heroLinkList = [
   {
+    title: "Estimate everything",
+    description: "insulation, metal, and bands",
+    link: "/estimate-sheet-insulation",
+    image: metalJacketing,
+  },
+  {
     title: "Estimate bands",
     description: "Estimate bands",
     link: "/estimate-bands",

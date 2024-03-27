@@ -128,7 +128,7 @@ const NavBar = () => {
                     : "text-white"
                 } block py-2 px-3 rounded md:border-0 md:p-0 md:hover:text-blue-500 hover:bg-gray-700  md:hover:bg-transparent`}
               >
-                Estimate sheet insulation
+                Estimate all
               </NavLink>
             </li>
           </ul>
