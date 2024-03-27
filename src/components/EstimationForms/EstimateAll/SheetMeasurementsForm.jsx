@@ -10,74 +10,87 @@ const SheetMeasurementsForm = ({
   updateNestedObject,
 }) => {
   return (
-    <FormWrappers title={"Now for the measurements."}>
-      <FormInputs
-        type="number"
-        nestedName="insulation"
-        fieldName="width"
-        updateFields={updateNestedObject}
-        label={
-          <span>
-            insulation width <em>(inches)</em>
-          </span>
-        }
-        value={insulation.width}
-      />
-      <FormInputs
-        type="number"
-        nestedName="insulation"
-        fieldName="thickness"
-        updateFields={updateNestedObject}
-        label={
-          <span>
-            insulation thickness <em>(inches)</em>
-          </span>
-        }
-        value={insulation.thickness}
-      />
-      <FormInputs
-        type="number"
-        nestedName="equipmentToInsulate"
-        fieldName="circumference"
-        updateFields={updateNestedObject}
-        label={
-          <span>
-            Pipe circumference <em>(inches)</em>
-          </span>
-        }
-        value={equipmentToInsulate.circumference}
-      />
-      <FormInputs
-        type="number"
-        nestedName="equipmentToInsulate"
-        fieldName="length"
-        updateFields={updateNestedObject}
-        label={
-          <span>
-            Pipe length <em>(inches)</em>
-          </span>
-        }
-        value={equipmentToInsulate.length}
-      />
-      {nineties == "true" && (
+    <FormWrappers title={"Measurements."}>
+      <div className="lg:w-1/2 mx-auto">
         <FormInputs
           type="number"
-          nestedName="ninety"
-          fieldName="quantityOfNineties"
+          nestedName="equipmentToInsulate"
+          fieldName="circumference"
           updateFields={updateNestedObject}
-          label="How Many Nineties?"
-          value={ninety.quantityOfNineties}
+          label={
+            <span>
+              Pipe circumference <sup>(in)</sup>
+            </span>
+          }
+          value={equipmentToInsulate.circumference}
         />
+      </div>
+      <div className="lg:w-1/2 mx-auto">
+        <FormInputs
+          type="number"
+          nestedName="equipmentToInsulate"
+          fieldName="length"
+          updateFields={updateNestedObject}
+          label={
+            <span>
+              Pipe length <sup>(Ft)</sup>
+            </span>
+          }
+          value={equipmentToInsulate.length}
+        />
+      </div>
+      <div className="lg:w-1/2 mx-auto">
+        <FormInputs
+          type="number"
+          nestedName="insulation"
+          fieldName="width"
+          updateFields={updateNestedObject}
+          label={
+            <span>
+              Insulation Width <sup>(in)</sup>
+            </span>
+          }
+          value={insulation.width}
+        />
+      </div>
+      <div className="lg:w-1/2 mx-auto">
+        <FormInputs
+          type="number"
+          nestedName="insulation"
+          fieldName="thickness"
+          updateFields={updateNestedObject}
+          label={
+            <span>
+              Insulation thickness <sup>(in)</sup>
+            </span>
+          }
+          value={insulation.thickness}
+        />
+      </div>
+
+      {nineties == "true" && (
+        <div className="lg:w-1/2 mx-auto">
+          <FormInputs
+            type="number"
+            nestedName="ninety"
+            fieldName="quantityOfNineties"
+            updateFields={updateNestedObject}
+            label="How Many Nineties?"
+            value={ninety.quantityOfNineties}
+          />
+        </div>
       )}
       {nineties == "true" && (
-        <FormInputs
-          type="number"
-          nestedName="ninety"
-          fieldName="numberOfGores"
-          updateFields={updateNestedObject}
-          label="How Many gores per ninety?"
-          value={ninety.numberOfGores}
-        />
+        <div className="lg:w-1/2 mx-auto">
+          <FormInputs
+            type="number"
+            nestedName="ninety"
+            fieldName="numberOfGores"
+            updateFields={updateNestedObject}
+            label="How Many gores per ninety?"
+            value={ninety.numberOfGores}
+          />
+        </div>
       )}
     </FormWrappers>
   );

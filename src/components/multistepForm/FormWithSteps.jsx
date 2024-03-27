@@ -27,18 +27,25 @@ const FormWithSteps = ({
     <div>
       {!submitted ? (
         <form onSubmit={shouldSubmit} className="w-full  h-full">
-          <div className="absolute text-white pr-2 top-0.5 right-0.5">
+          <div className=" absolute text-white pr-2 top-0.5 right-0.5">
             {currentStep + 1} / {steps.length}
           </div>
           {step}
           <div className=" w-full flex justify-end  mt-10">
             {" "}
             {!isFirstStep && (
-              <button className="border px-2" type="button" onClick={back}>
+              <button
+                className=" text-white px-2 mr-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg px-2 py-2 "
+                type="button"
+                onClick={back}
+              >
                 back
               </button>
             )}
-            <button className="ml-3 mr-2 border px-2" type="submit">
+            <button
+              className="ml-3 mr-4   text-white px-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg px-2 py-2 "
+              type="submit"
+            >
               {isLastStep ? "submit" : "next"}
             </button>
           </div>
