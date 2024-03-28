@@ -14,8 +14,8 @@ const ChooseCover = ({
     { label: "", value: "" },
     { label: "Almost no cutouts", value: "1" },
     { label: "Few Cutouts", value: "2" },
-    { label: "More Cutouts, may mess up a bit ", value: "3" },
-    { label: "Lots of cutouts, will need more ", value: "4" },
+    { label: "More Cutouts, may require adjustments", value: "3" },
+    { label: "Lots of cutouts, will need additional materials", value: "4" },
   ];
   const RadioOptions = [
     { label: "Yes", value: "true" },
@@ -24,8 +24,8 @@ const ChooseCover = ({
 
   return (
     <FormWrappers
-      title={"How hard is the job? "}
-      subtext={"This is how we calculate the waste material you may need."}
+      title={"How difficult is the job?"}
+      subtext={"This affects the estimation of waste material you may need."}
     >
       <div className="">
         <SelectInput
@@ -33,14 +33,14 @@ const ChooseCover = ({
           nestedName="equipmentToInsulate"
           fieldName="difficulty"
           updateFields={updateNestedObject}
-          label="difficulty to insulate"
+          label="Difficulty to insulate"
           value={equipmentToInsulate.difficulty}
           options={difficultyOptions}
         />
         <RadioInput
           fieldName="nineties"
           updateFields={updateFields}
-          label="Are there 90's?"
+          label="Are there 90-degree corners?"
           value={nineties}
           options={RadioOptions}
         />

@@ -10,7 +10,7 @@ const SheetMeasurementsForm = ({
   updateNestedObject,
 }) => {
   return (
-    <FormWrappers title={"Measurements."}>
+    <FormWrappers title={"Measurements"}>
       <div className="lg:w-1/2 mx-auto">
         <FormInputs
           type="number"
@@ -33,7 +33,7 @@ const SheetMeasurementsForm = ({
           updateFields={updateNestedObject}
           label={
             <span>
-              Pipe length <sup>(Ft)</sup>
+              Pipe length <sup>(ft)</sup>
             </span>
           }
           value={equipmentToInsulate.length}
@@ -47,7 +47,7 @@ const SheetMeasurementsForm = ({
           updateFields={updateNestedObject}
           label={
             <span>
-              Insulation Width <sup>(in)</sup>
+              Insulation width <sup>(in)</sup>
             </span>
           }
           value={insulation.width}
@@ -68,26 +68,26 @@ const SheetMeasurementsForm = ({
         />
       </div>
 
-      {nineties == "true" && (
+      {nineties === "true" && (
         <div className="lg:w-1/2 mx-auto">
           <FormInputs
             type="number"
             nestedName="ninety"
             fieldName="quantityOfNineties"
             updateFields={updateNestedObject}
-            label="How Many Nineties?"
+            label="How many Nineties?"
             value={ninety.quantityOfNineties}
           />
         </div>
       )}
-      {nineties == "true" && (
+      {nineties === "true" && (
         <div className="lg:w-1/2 mx-auto">
           <FormInputs
             type="number"
             nestedName="ninety"
             fieldName="numberOfGores"
             updateFields={updateNestedObject}
-            label="How Many gores per ninety?"
+            label="How many gores per Ninety?"
             value={ninety.numberOfGores}
           />
         </div>

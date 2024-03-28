@@ -21,7 +21,7 @@ const AllResultsPage = ({ data }) => {
         <div className="w-fit">
           <p>Band Quantity: {bands.bandQuantity}</p>
           <p>
-            Each bands Length: {bands.bandLength}
+            Each band's Length: {bands.bandLength}
             <sup>in</sup>
           </p>
         </div>
@@ -30,7 +30,7 @@ const AllResultsPage = ({ data }) => {
         </h2>
         <div className="w-fit">
           <p>
-            Sheet Length (if its not precut): {insulation.sheetLength}{" "}
+            Sheet Length (if it's not pre-cut): {insulation.sheetLength}{" "}
             <sup>in</sup>
           </p>
           <p>Number of sheets: {Math.ceil(insulation.numberOfSheets)}</p>
