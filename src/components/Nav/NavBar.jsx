@@ -9,16 +9,13 @@ const NavBar = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
-    // Function to handle clicks outside of the menu
     function handleClickOutside(event) {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         if (openMenu === true) setOpenMenu(false);
       }
     }
-    // Add event listener when the component mounts
     document.addEventListener("mousedown", handleClickOutside);
 
-    // Remove event listener when the component unmounts
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };

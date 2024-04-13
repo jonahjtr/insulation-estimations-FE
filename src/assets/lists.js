@@ -1,22 +1,17 @@
-import BandImage from "./images/heroLinks/bands2.jpg";
-import mineralWool from "./images/heroLinks/mineralWool.jpeg";
-import metalJacketing from "./images/heroLinks/metal.jpeg";
-import MineralWoolBricks from "./images/heroLinks/mineralWoolBricks.jpeg";
-import HardPipeCover from "./images/heroLinks/hardPipeCover.jpeg";
-import tempWrap from "./images/heroLinks/tempWrap.jpg";
+import {
+  bandImage,
+  mineralWool,
+  metalJacketing,
+  mineralWoolBricks,
+  hardPipeCover,
+} from "./images/index";
 
-const heroLinkList = [
-  {
-    title: "Estimate everything",
-    description: "insulation, metal, and bands",
-    link: "/estimate-sheet-insulation",
-    image: metalJacketing,
-  },
+const specificMaterialList = [
   {
     title: "Estimate bands",
     description: "Estimate bands",
     link: "/estimate-bands",
-    image: BandImage,
+    image: bandImage,
   },
   {
     title: "Estimate Insulation",
@@ -37,14 +32,29 @@ const insulationLinkList = [
     title: "Sheets",
     description: "Sheet insulation",
     link: "/estimate-mineral-wool",
-    image: MineralWoolBricks,
+    image: mineralWoolBricks,
   },
   {
     title: "Formed Pipe Cover",
     description: "Formed Pipe Cover",
     link: "/estimate-formed-insulation",
-    image: HardPipeCover,
+    image: hardPipeCover,
   },
 ];
 
-export { heroLinkList, insulationLinkList };
+const homeLinksList = [
+  {
+    title: "Estimate everything",
+    description: "Insulation, metal, and bands",
+    link: "/estimate-sheet-insulation",
+    image: metalJacketing,
+  },
+  {
+    title: "Estimate Specific Material",
+    description: "One material at a time",
+    link: "/specific-material-landing",
+    image: mineralWool,
+  },
+];
+
+export { specificMaterialList, insulationLinkList, homeLinksList };

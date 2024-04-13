@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { mainBackground } from "../assets/images";
+import { mainBackground } from "../assets/images/";
 import HeroLinks from "../components/heroLinks/HeroLinks";
 import NavBar from "../components/Nav/NavBar";
-import { homeLinksList } from "../assets/lists";
+import { specificMaterialList } from "../assets/lists";
 const Home = () => {
   return (
     <div className="w-[calc(100dvw)] h-[calc(100dvh)] md:h-screen bg-gray-500    overflow-y-hidden	">
@@ -12,7 +12,7 @@ const Home = () => {
         style={{ backgroundImage: `url(${mainBackground})` }}
       >
         <div className="h-fit w-full sm:w-[80vw] my-auto py-10 overflow-y-auto flex justify-center items-center  backdrop-blur-xl  sm:min-h-[70vh]  max-w-[1400px] md:max-h-[1000px]">
-          <HeroLinks heroLinkList={homeLinksList} />
+          <HeroLinks heroLinkList={specificMaterialList} />
         </div>
       </div>
     </div>

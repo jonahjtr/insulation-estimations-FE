@@ -14,6 +14,10 @@ function App() {
       <Route path="/estimate-bands" element={<EstimateBands />} />
       <Route path="/estimate-metal" element={<EstimateMetal />} />
       <Route path="/insulation-landing" element={<InsulationLanding />} />
+      <Route
+        path="/specific-material-landing"
+        element={<EstimateSheetInsulation />}
+      />
       <Route path="/estimate-mineral-wool" element={<EstimateMineralWool />} />
       <Route
         path="/estimate-formed-insulation"

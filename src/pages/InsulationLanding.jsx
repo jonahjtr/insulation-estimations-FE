@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../components/Nav/NavBar";
-import heroPic from "../assets/images/HDplant.jpg";
+import { mainBackground } from "../assets/images/";
 import HeroLinks from "../components/heroLinks/HeroLinks";
 import { insulationLinkList } from "../assets/lists";
 
@@ -10,7 +10,7 @@ const InsulationLanding = () => {
       <NavBar />
       <div
         className=" w-screen  md:overflow-hidden bg-cover w-full max-w-[3000px] h-full max-h-screen flex justify-center md:items-center	"
-        style={{ backgroundImage: `url(${heroPic})` }}
+        style={{ backgroundImage: `url(${mainBackground})` }}
       >
         <div className="h-fit my-auto py-10 overflow-y-auto flex justify-center items-center  backdrop-blur-xl w-[80vw] sm:min-h-[70vh] max-w-[1000px] md:max-h-[1000px]">
           <HeroLinks
