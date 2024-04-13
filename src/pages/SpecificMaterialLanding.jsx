@@ -3,7 +3,7 @@ import { mainBackground } from "../assets/images/";
 import HeroLinks from "../components/heroLinks/HeroLinks";
 import NavBar from "../components/Nav/NavBar";
 import { specificMaterialList } from "../assets/lists";
-const Home = () => {
+const SpecificMaterialLanding = () => {
   return (
     <div className="w-[calc(100dvw)] h-[calc(100dvh)] md:h-screen bg-gray-500    overflow-y-hidden	">
       <NavBar />
@@ -19,4 +19,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default SpecificMaterialLanding;
