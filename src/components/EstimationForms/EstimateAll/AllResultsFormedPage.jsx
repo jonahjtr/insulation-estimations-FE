@@ -8,7 +8,8 @@ const AllResultsFormedPage = ({ data }) => {
   const toggleMaterialDetails = () => {
     setShowMaterialDetails(!showMaterialDetails);
   };
-
+  console.log("insulation", insulation);
+  console.log("number of sticks", insulation.numberOfSticks);
   return (
     <div className="w-full h-full bg-blue">
       <h1 className="w-fit mx-auto text-4xl md:text-4xl text-white font-bold">
@@ -85,7 +86,7 @@ const AllResultsFormedPage = ({ data }) => {
                 <sup>Sqft</sup>
               </p>
               <p>
-                Total insulation to order: {insulation.totalSquareFeet}{" "}
+                Total insulation to order: {insulation.totalLinearFeet}{" "}
                 <sup>Sqft</sup>
               </p>
               <p>

@@ -49,6 +49,7 @@ export const estimateAllFormedInsulation = (data) => {
 
   const pipeLength = parseInt(equipmentToInsulate.length);
   const insulationWidth = parseInt(insulation.width);
+  console.log(insulationWidth);
 
   const insulationData = calculateFormedInsulation(
     parseInt(pipeLength),
@@ -57,7 +58,9 @@ export const estimateAllFormedInsulation = (data) => {
 
   const pipeDiameter = equipmentToInsulate.circumference / Math.PI;
   const fullDiameter =
-    Math.ceil(pipeDiameter) + parseInt(insulation.thickness) * 2;
+    Math.ceil(pipeDiameter) +
+    parseInt(insulation.thickness) +
+    parseInt(insulation.thickness);
   const outerCircumference = Math.ceil(fullDiameter * Math.PI);
 
   const bandData = calculateBands(outerCircumference, pipeLength, ninety);

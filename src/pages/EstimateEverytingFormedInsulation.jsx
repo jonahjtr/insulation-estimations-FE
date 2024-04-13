@@ -13,7 +13,7 @@ const INITIAL_DATA = {
     type: "",
     thickness: "",
     length: "",
-    width: "",
+    width: "36",
   },
   equipmentToInsulate: {
     difficulty: "",
