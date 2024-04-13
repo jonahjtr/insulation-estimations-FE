@@ -4,7 +4,7 @@ import { useMultiStepForm } from "../hooks/useMultiStepForm";
 import FormWithSteps from "../components/multistepForm/FormWithSteps";
 import ChooseCover from "../components/EstimationForms/EstimateAll/ChooseCover";
 import MeasurementsForm from "../components/EstimationForms/EstimateAll/SheetMeasurementsForm";
-import AllResultsPage from "../components/EstimationForms/EstimateAll/AllResultsPage";
+import AllResultsSheetPage from "../components/EstimationForms/EstimateAll/AllResultsSheetPage";
 import { estimateAllSheetInsulation } from "../../logic/estimateAll";
 
 const INITIAL_DATA = {
@@ -26,7 +26,7 @@ const INITIAL_DATA = {
   },
 };
 
-const EstimateAll = () => {
+const EstimateEverythingSheetInsulation = () => {
   const [submitted, setSubmitted] = useState(false);
   const [data, setData] = useState(INITIAL_DATA);
   const [results, setResults] = useState({});
@@ -82,13 +82,13 @@ const EstimateAll = () => {
         <FormWithSteps
           {...useMultiStepForm(formArray)}
           onSubmit={onSubmit}
-          finishedPage={<AllResultsPage data={results} />}
+          finishedPage={<AllResultsSheetPage data={results} />}
         />
       </div>
     </div>
   );
 };
 
-export default EstimateAll;
+export default EstimateEverythingSheetInsulation;
 
 //

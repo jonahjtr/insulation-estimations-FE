@@ -43,8 +43,42 @@ export const estimateAllSheetInsulation = (data) => {
   return { insulationData, bandData, metalData };
 };
 
+//------------------------------------------------formed insulation ------------------------------------------------------
+export const estimateAllFormedInsulation = (data) => {
+  const { insulation, equipmentToInsulate, ninety } = data;
+
+  const pipeLength = parseInt(equipmentToInsulate.length);
+  const insulationWidth = parseInt(insulation.width);
+
+  const insulationData = calculateFormedInsulation(
+    parseInt(pipeLength),
+    insulationWidth
+  );
+
+  const pipeDiameter = equipmentToInsulate.circumference / Math.PI;
+  const fullDiameter =
+    Math.ceil(pipeDiameter) + parseInt(insulation.thickness) * 2;
+  const outerCircumference = Math.ceil(fullDiameter * Math.PI);
+
+  const bandData = calculateBands(outerCircumference, pipeLength, ninety);
+
+  const metalData = CalculateMetalJacketing(outerCircumference, pipeLength, 36);
+
+  return { insulationData, bandData, metalData };
+};
+//-----------------------------------------formed insulation^^^^^ ------------------------------------------------------
+
 //-----------------------------------------helper functions ------------------------------------------------------
 
+function calculateFormedInsulation(pipeLength, insulationWidth) {
+  const widthInFeet = Math.ceil(parseInt(insulationWidth) / 12);
+  const numberOfSticks = parseInt(pipeLength) / widthInFeet;
+  const totalLinearFeet = parseInt(pipeLength) * 2;
+  return {
+    numberOfSticks: Math.ceil(numberOfSticks * 2),
+    totalLinearFeet,
+  };
+}
 function CalculateMetalJacketing(circumference, pipeLength, sheetWidth) {
   const lengthOfSheet = parseInt(circumference) + 3;
   const sheetWidthAfterLap = (parseInt(sheetWidth) - 4) / 12;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const AllResultsPage = ({ data }) => {
+const AllResultsSheetPage = ({ data }) => {
   const { bands, insulation, metal } = data;
 
   const [showMaterialDetails, setShowMaterialDetails] = useState(false);
@@ -103,4 +103,4 @@ const AllResultsPage = ({ data }) => {
   );
 };
 
-export default AllResultsPage;
+export default AllResultsSheetPage;

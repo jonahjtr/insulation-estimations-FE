@@ -1,12 +1,17 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+
+import SpecificMaterialLanding from "./pages/SpecificMaterialLanding";
+import EstimateEverythingLanding from "./pages/EstimateEverythingLanding";
+
 import EstimateBands from "./pages/EstimateBands";
 import EstimateMineralWool from "./pages/EstimateMineralWool";
 import EstimateMetal from "./pages/EstimateMetal";
 import InsulationLanding from "./pages/InsulationLanding";
 import EstimateFormedinsulation from "./pages/EstimateFormedinsulation";
-import EstimateSheetInsulation from "./pages/EstimateSheetInsulation";
-import SpecificMaterialLanding from "./pages/SpecificMaterialLanding";
+
+import EstimateEverythingSheetInsulation from "./pages/EstimateEverythingSheetInsulation";
+import EstimateEverythingFormedInsulation from "./pages/EstimateEverytingFormedInsulation";
 
 function App() {
   return (
@@ -24,9 +29,18 @@ function App() {
         path="/estimate-formed-insulation"
         element={<EstimateFormedinsulation />}
       />
+
       <Route
-        path="/estimate-sheet-insulation"
-        element={<EstimateSheetInsulation />}
+        path="/estimate-everything-landing"
+        element={<EstimateEverythingLanding />}
+      />
+      <Route
+        path="/estimate-everything-formed-insulation"
+        element={<EstimateEverythingFormedInsulation />}
+      />
+      <Route
+        path="/estimate-everything-sheet-insulation"
+        element={<EstimateEverythingSheetInsulation />}
       />
     </Routes>
   );
