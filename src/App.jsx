@@ -9,37 +9,48 @@ import EstimateMineralWool from "./pages/EstimateMineralWool";
 import EstimateMetal from "./pages/EstimateMetal";
 import InsulationLanding from "./pages/InsulationLanding";
 import EstimateFormedinsulation from "./pages/EstimateFormedinsulation";
+import ChooseTypeOfProject from "./pages/ChooseTypeOfProject";
 
 import EstimateEverythingSheetInsulation from "./pages/EstimateEverythingSheetInsulation";
 import EstimateEverythingFormedInsulation from "./pages/EstimateEverytingFormedInsulation";
-
+import { pathNames } from "./assets/lists";
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/estimate-bands" element={<EstimateBands />} />
-      <Route path="/estimate-metal" element={<EstimateMetal />} />
-      <Route path="/insulation-landing" element={<InsulationLanding />} />
+      <Route path={pathNames.estimateBands} element={<EstimateBands />} />
+      <Route path={pathNames.estimateMetal} element={<EstimateMetal />} />
       <Route
-        path="/specific-material-landing"
+        path={pathNames.insulationLanding}
+        element={<InsulationLanding />}
+      />
+      <Route
+        path={pathNames.specificMaterialLanding}
         element={<SpecificMaterialLanding />}
       />
-      <Route path="/estimate-mineral-wool" element={<EstimateMineralWool />} />
       <Route
-        path="/estimate-formed-insulation"
+        path={pathNames.estimateMineralWool}
+        element={<EstimateMineralWool />}
+      />
+      <Route
+        path={pathNames.estimateFormedInsulation}
         element={<EstimateFormedinsulation />}
+      />
+      <Route
+        path={pathNames.chooseProjectType}
+        element={<ChooseTypeOfProject />}
       />
 
       <Route
-        path="/estimate-everything-landing"
+        path={pathNames.estimateAllPipeMaterialLanding}
         element={<EstimateEverythingLanding />}
       />
       <Route
-        path="/estimate-everything-formed-insulation"
+        path={pathNames.estimateAllPipeFormedInsulation}
         element={<EstimateEverythingFormedInsulation />}
       />
       <Route
-        path="/estimate-everything-sheet-insulation"
+        path={pathNames.estimateAllPipeSheetInsulation}
         element={<EstimateEverythingSheetInsulation />}
       />
     </Routes>

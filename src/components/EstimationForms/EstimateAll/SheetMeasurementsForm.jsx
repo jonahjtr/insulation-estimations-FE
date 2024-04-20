@@ -1,6 +1,6 @@
 import React from "react";
-import FormWrappers from "../FormWrappers";
-import FormInputs from "../FormInputs";
+import FormWrappers from "../../reusables/FormWrappers";
+import FormInputs from "../../reusables/FormInputs";
 
 const SheetMeasurementsForm = ({
   nineties,

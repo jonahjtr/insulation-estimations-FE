@@ -1,8 +1,8 @@
 import React from "react";
-import FormWrappers from "../FormWrappers";
-import FormInputs from "../FormInputs";
-import SelectInput from "../SelectInput";
-import RadioInput from "../RadioInput";
+import FormWrappers from "../../reusables/FormWrappers";
+import FormInputs from "../../reusables/FormInputs";
+import SelectInput from "../../reusables/SelectInput";
+import RadioInput from "../../reusables/RadioInput";
 
 const ChooseCover = ({
   nineties,
@@ -40,7 +40,7 @@ const ChooseCover = ({
         <RadioInput
           fieldName="nineties"
           updateFields={updateFields}
-          label="Are there 90-degree corners?"
+          label="Are there 90's with multiple gores?"
           value={nineties}
           options={RadioOptions}
         />

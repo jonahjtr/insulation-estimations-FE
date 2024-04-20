@@ -6,7 +6,10 @@ import metalJacketing from "./heroLinks/metal.jpeg";
 import mineralWoolBricks from "./heroLinks/mineralWoolBricks.jpeg";
 import hardPipeCover from "./heroLinks/hardPipeCover.jpeg";
 import tempWrap from "./heroLinks/tempWrap.jpg";
-
+import tower from "./heroLinks/tower.jpeg";
+import pipes from "./heroLinks/pipes.jpeg";
+import tank from "./heroLinks/tank.jpeg";
+import vessel from "./heroLinks/vessel.jpeg";
 export {
   mainBackground,
   bandImage,
@@ -16,4 +19,8 @@ export {
   hardPipeCover,
   tempWrap,
   logo,
+  tower,
+  pipes,
+  tank,
+  vessel,
 };

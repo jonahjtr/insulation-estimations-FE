@@ -90,7 +90,7 @@ const AllResultsFormedPage = ({ data }) => {
                 <sup>Sqft</sup>
               </p>
               <p>
-                Total Bands to order: {bands.totalBandLength} <sup>Sqft</sup>
+                Total Bands to order: {bands.totalBandLength} <sup>ft</sup>
               </p>
             </div>
           )}

@@ -1,7 +1,6 @@
 import React from "react";
-import { inputClass, labelClass } from "../../reusables/formCss";
-import FormWrappers from "../FormWrappers";
-import FormInputs from "../FormInputs";
+import FormWrappers from "../../reusables/FormWrappers";
+import FormInputs from "../../reusables/FormInputs";
 
 const EstimateMineralWoolForm = ({
   pipeLength,

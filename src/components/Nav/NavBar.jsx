@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { logo } from "../../assets/images/index";
+import { pathNames } from "../../assets/lists";
 
 const NavBar = () => {
   const menuRef = useRef(null);
@@ -20,7 +21,20 @@ const NavBar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [menuRef, openMenu]);
-
+  let estimateAllPathnames = [
+    pathNames.estimateAllPipeMaterialLanding,
+    pathNames.chooseProjectType,
+    pathNames.estimateAllPipeFormedInsulation,
+    pathNames.estimateAllPipeSheetInsulation,
+  ];
+  let estimateSpecificPathnames = [
+    pathNames.estimateBands,
+    pathNames.estimateMetal,
+    pathNames.estimateMineralWool,
+    pathNames.insulationLanding,
+    pathNames.specificMaterialLanding,
+    pathNames.specificMaterialLanding,
+  ];
   return (
     <nav className="border-gray-200 bg-gray-900">
       <div
@@ -82,50 +96,26 @@ const NavBar = () => {
             </li>
             <li>
               <NavLink
-                to="/estimate-bands"
+                to={pathNames.chooseProjectType}
                 className={` ${
-                  pathname === "/estimate-bands"
+                  estimateAllPathnames.includes(pathname)
                     ? "text-blue-500"
                     : "text-white"
                 } block py-2 px-3 rounded md:border-0 md:p-0 md:hover:text-blue-500 hover:bg-gray-700  md:hover:bg-transparent`}
               >
-                Bands
+                All materials
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/insulation-landing"
+                to={pathNames.specificMaterialLanding}
                 className={` ${
-                  pathname === "/insulation-landing"
+                  estimateSpecificPathnames.includes(pathname)
                     ? "text-blue-500"
                     : "text-white"
                 } block py-2 px-3 rounded md:border-0 md:p-0 md:hover:text-blue-500 hover:bg-gray-700  md:hover:bg-transparent`}
               >
-                Insulation
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/estimate-metal"
-                className={` ${
-                  pathname === "/estimate-metal"
-                    ? "text-blue-500"
-                    : "text-white"
-                } block py-2 px-3 rounded md:border-0 md:p-0 md:hover:text-blue-500 hover:bg-gray-700  md:hover:bg-transparent`}
-              >
-                Metal
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/estimate-sheet-insulation"
-                className={` ${
-                  pathname === "/estimate-sheet-insulation"
-                    ? "text-blue-500"
-                    : "text-white"
-                } block py-2 px-3 rounded md:border-0 md:p-0 md:hover:text-blue-500 hover:bg-gray-700  md:hover:bg-transparent`}
-              >
-                Estimate all
+                Specific materials
               </NavLink>
             </li>
           </ul>

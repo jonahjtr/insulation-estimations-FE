@@ -36,7 +36,7 @@ const AllResultsSheetPage = ({ data }) => {
           <p>Number of sheets: {Math.ceil(insulation.numberOfSheets)}</p>
         </div>
         <h2 className="text-2xl font-bold mt-6 text-center md:text-4xl">
-          Materials
+          Metal (not including nineties)
         </h2>
         <div className="w-fit">
           <p>
@@ -93,7 +93,7 @@ const AllResultsSheetPage = ({ data }) => {
                 <sup>Sqft</sup>
               </p>
               <p>
-                Total Bands to order: {bands.totalBandLength} <sup>Sqft</sup>
+                Total Bands to order: {bands.totalBandLength} <sup>ft</sup>
               </p>
             </div>
           )}
